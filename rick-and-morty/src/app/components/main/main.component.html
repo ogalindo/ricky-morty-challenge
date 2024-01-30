@@ -1,0 +1,40 @@
+<div>
+    <div class="header">
+        <div class="header__title-header">
+            <h1 class="header__title-header__title">{{title}}</h1>
+        </div>
+        
+        <div class="header__input-header">
+            <input 
+                lass="header__input-header__input"
+                type="text" 
+                autofocus 
+                placeholder="" 
+                [formControl]="charactersForm"
+            >
+            <button (click)="searchCharacter()">search</button>
+        </div>
+    </div>
+    <div class="body-container">
+        <div class="list-characters">
+            <div *ngFor="let character of characters" class="character-container">
+                    <div class="character-container__avatar">
+                        <img class="img" src="{{character.image}}" alt="">
+                    </div>
+                    <div class="character-container__info">
+                        <p>{{character.name}}</p>
+                        <p>{{character.species}}</p>
+                        <p>{{character.gender}}</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function(ev) {
+      if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+        alert("you are at the bottom of the page");
+      }
+    }
+</script>
+
